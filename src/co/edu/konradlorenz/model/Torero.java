@@ -2,7 +2,6 @@ package co.edu.konradlorenz.model;
 
 public class Torero extends Persona implements Premio {
 
-
 	private String apodo;
 	private String fechaAlternativa;
 	private Torero padrino;
@@ -103,22 +102,20 @@ public class Torero extends Persona implements Premio {
 	
 	@Override
 	public String toString() {
-		return "Torero [apodo=" + apodo + ", fechaAlternativa=" + fechaAlternativa + ", padrino=" + padrino
-				+ ", apoderado=" + apoderado + ", orejas=" + orejas + ", rabos=" + rabos + ", puertaGrande="
+		return "Torero [apodo=" + apodo + ", fechaAlternativa=" + fechaAlternativa + ", padrino=" + padrino.getNombre()
+				+ ", apoderado=" + apoderado.getNombre() + ", orejas=" + orejas + ", rabos=" + rabos + ", puertaGrande="
 				+ puertaGrande + "]";
 	}
 
 	@Override
 	public String mostrarDatos() {
 		String puerta = "";
-		
 		if(puertaGrande()) {
         	puerta = "El torero salio por la puerta grande.";
         }else {
         	puerta = "El torero no salio por la puerna grande.";
         }
         
-		
 		return "Datos Torero: \n"
 				+ "Nombre: "+ getNombre()
 				+ "Cedula: "+ getCedula()

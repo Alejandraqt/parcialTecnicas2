@@ -5,9 +5,7 @@ public abstract class Persona {
 	private String nombre;
 	private String cedula;
 	
-	
 	protected Persona() {
-
 	}
 	
 	protected Persona(String nombre, String cedula) {
@@ -37,5 +35,4 @@ public abstract class Persona {
 	}
 		
 	public abstract String mostrarDatos(); 
-	
 }

@@ -13,12 +13,10 @@ public class Corrida {
 	
 	
 	public Corrida() {
-
 	}
 
 	public Corrida(int numeroOrden, String feria, int anioCelebracion, ArrayList<Torero> listaToreros,
 			ArrayList<Toro> listaToros, Plaza plaza) {
-		super();
 		this.numeroOrden = numeroOrden;
 		this.feria = feria;
 		this.anioCelebracion = anioCelebracion;
@@ -80,16 +78,14 @@ public class Corrida {
 	@Override
 	public String toString() {
 		return "Corrida [numeroOrden=" + numeroOrden + ", feria=" + feria + ", anioCelebracion=" + anioCelebracion
-				+ ", listaToreros=" + listaToreros + ", listaToros=" + listaToros + ", plaza=" + plaza + "]";
+				 + plaza + "]";
 	}
-
-
 
     public void agregarTorero(Torero torero) {
         if (listaToreros.size() < 3) {
             listaToreros.add(torero);
         } else {
-            System.out.println("No se pueden agregar más toreros. El límite es 3.");
+            String a = "No se pueden agregar más toreros. El límite es 3.";
         }
     }
 
@@ -97,5 +93,5 @@ public class Corrida {
         listaToros.add(toro);
     }
 
-
+    
 }

@@ -46,12 +46,12 @@ public class Manager extends Persona{
 		this.telefono = telefono;
 	}
 	
-	public ArrayList<Torero> getListaToreros() {
-		return listaToreros;
+	public String getListaToreros(int indice) {
+		return listaToreros.get(indice);
 	}
 
-	public void setListaToreros(ArrayList<Torero> listaToreros) {
-		this.listaToreros = listaToreros;
+	public void setListaToreros(Torero torero) {
+		this.listaToreros.add(torero);
 	}
 
 	@Override
@@ -69,6 +69,4 @@ public class Manager extends Persona{
 				+ "Lista de toreros apoderados: "+ listaToreros;
 	}
 
-	
-	
 }

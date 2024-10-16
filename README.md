@@ -1,1 +1,0 @@
-# parcialTecnicas2
