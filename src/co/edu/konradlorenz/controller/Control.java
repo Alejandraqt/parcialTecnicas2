@@ -64,18 +64,6 @@ public class Control {
 	        }
 	    }
 		
-		Ventana.mostrarMensaje("Agregar nueva plaza: ");
-<<<<<<< HEAD
-		String nombre, localidad, direccion;
-		nombre = nombre;
-		localidad = Ventana.pedirDato("la localidad");
-		direccion = Ventana.pedirDato("la dirección");
-		objPlaza = new Plaza(nombre, localidad, direccion);
-		listaPlazas.add(objPlaza);
-		Ventana.mostrarMensaje("Plaza agregada con éxito");
-		return objPlaza;
-		}
-=======
 	    String localidad = Ventana.pedirDato("la localidad");
 	    String direccion = Ventana.pedirDato("la dirección");
 
@@ -84,8 +72,7 @@ public class Control {
 
 	    Ventana.mostrarMensaje("Plaza agregada con éxito");
 	    return nuevaPlaza;
->>>>>>> origin/main
-	}
+}
 
 	public void mostrarCorridas() {
 		if(listaCorridas.isEmpty()){
@@ -102,12 +89,12 @@ public class Control {
 		String feria = Ventana.pedirDato("la feria");
 		for (int i=0; i<listaCorridas.size(); i++) {
 			if(listaCorridas.get(i).getFeria().equalsIgnoreCase(feria)) {
-				Ventana.mostrarMensaje((i+1)+": "+ listaCorridas.get(i).toString();
+				Ventana.mostrarMensaje((i+1)+": "+ listaCorridas.get(i).toString());
 			}
 		}
 		gestionCorridas();
 	}
-	
+
 	public void gestionCorridas() {
 		byte corrida = (byte)((Ventana.pedirInt("Seleccione la corrida que desea ver: "))-1);
 		byte opc = 0;
@@ -116,19 +103,19 @@ public class Control {
 			switch(opc) {
 				case 1:
 					Ventana.mostrarMensaje("- - AGREGAR TORERO - -");
-					agregarTorero();
+					agregarTorero(corrida);
 					break;
 				case 2:
 					Ventana.mostrarMensaje("- - VER TOREROS - -");
-					mostrarToreros();
+					mostrarToreros(corrida);
 					break;
 				case 3:
 					Ventana.mostrarMensaje("- - AGREGAR TORO - -");
-					//agregarToro();
+					agregarToro(corrida);
 					break;
 				case 4:
 					Ventana.mostrarMensaje("- - VER TORO - -");
-					//mostrarToros(corrida);
+					mostrarToros(corrida);
 					break;
 				case 5:
 					run();
@@ -185,6 +172,24 @@ public class Control {
 			}
 		}
 	}
+
+	public Ganaderia agregarGanaderia(int codigo) {
+		for (Ganaderia ganaderia : listaGanaderias) {
+			if (ganaderia.getCodigo() == codigo) {
+				return ganaderia;
+			}
+		}
+
+		Ventana.mostrarMensaje("Agregar nueva ganaderia: ");
+		
+		String localidad, antiguedad;
+		localidad = Ventana.pedirDato("la localidad");
+		antiguedad = Ventana.pedirDato("la antiguedad (DD/MM/AAAA)");
+		objGanaderia = new Ganaderia(codigo, localidad, antiguedad);
+		listaGanaderias.add(objGanaderia);
+		Ventana.mostrarMensaje("Ganadería agregada con éxito");
+		return objGanaderia;
+	}
 	
 	public void agregarToro(byte corrida) {
 		if(corrida >= 0 && corrida < listaCorridas.size()) {
@@ -204,30 +209,7 @@ public class Control {
 			Ventana.mostrarMensaje("Toro agregado con éxito a la corrida");
 		}			
 	}		
-			
-	public void agregarGanaderia(int codigo) {
-			boolean encontrado = false;
-			for(int i=0; i<listaGanaderias.size(); i++) {
-				if(listaGanaderias.get(i).getCodigo() == codigo){
-					encontrado = true;
-					return listaGanaderias.get(i);
-				}
-			}
-			
-			if(!encontrado) {
-			Ventana.mostrarMensaje("Agregar nueva ganadería: ");
-			int codigo;
-			String localidad, antiguedad;
-			codigo = codigo;
-			localidad = Ventana.pedirDato("la localidad");
-			antiguedad = Ventana.pedirDato("la antiguedad (DD/MM/AAAA)");
-			objGanaderia = new Ganaderia(codigo, localidad, antiguedad);
-			listaGanaderias.add(objGanaderia);
-			Ventana.mostrarMensaje("Ganadería agregada con éxito");
-			return objGanaderia;
-			}
-		
-	}
+	
 	
 	public void mostrarToros(byte corrida) {
 		if(corrida >= 0 && corrida < listaCorridas.size()) {

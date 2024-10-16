@@ -14,6 +14,7 @@ public class Ventana {
 		System.out.println("4. Salir");
 		System.out.println("Seleccione una opción: ");
 		byte opcion = leer.nextByte();
+		leer.nextLine();
 		return opcion;
 	}
 	
@@ -26,6 +27,7 @@ public class Ventana {
 		System.out.println("5. Volver");
 		System.out.println("Seleccione una opción: ");
 		byte opcion = leer.nextByte();
+		leer.nextLine();
 		return opcion;
 	}
 	
