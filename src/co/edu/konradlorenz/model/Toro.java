@@ -10,11 +10,9 @@ public class Toro {
 	private Ganaderia ganaraderia;
 	
 	public Toro() {
-	
 	}
 	
 	public Toro(int codigo, int anioNacimiento, int numeroOrden, String nombre, String color, Ganaderia ganaraderia) {
-		super();
 		this.codigo = codigo;
 		this.anioNacimiento = anioNacimiento;
 		this.numeroOrden = numeroOrden;
