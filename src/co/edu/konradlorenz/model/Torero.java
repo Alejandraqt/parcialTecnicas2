@@ -42,7 +42,6 @@ public class Torero extends Persona implements Premio {
 		this.puertaGrande = puertaGrande;
 	}
 
-	
 	public String getApodo() {
 		return apodo;
 	}
@@ -102,9 +101,7 @@ public class Torero extends Persona implements Premio {
 	
 	@Override
 	public String toString() {
-		return "Torero [apodo=" + apodo + ", fechaAlternativa=" + fechaAlternativa + ", padrino=" + padrino.getNombre()
-				+ ", apoderado=" + apoderado.getNombre() + ", orejas=" + orejas + ", rabos=" + rabos + ", puertaGrande="
-				+ puertaGrande + "]";
+		return "Torero [apodo=" + apodo + ", fechaAlternativa=" + fechaAlternativa + "]";
 	}
 
 	@Override
@@ -126,8 +123,7 @@ public class Torero extends Persona implements Premio {
 				+ "Premios"
 				+ "Orejas: "+ cantidadOrejas()
 				+ "Rabos: "+ cantidadRabos()
-				+ puerta;
-		
+				+ puerta;	
 	}
 
 	@Override

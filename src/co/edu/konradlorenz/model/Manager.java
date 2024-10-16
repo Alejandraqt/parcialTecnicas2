@@ -67,6 +67,5 @@ public class Manager extends Persona{
 				+ "Direccion: "+ direccion
 				+ "Telefono: "+ telefono
 				+ "Lista de toreros apoderados: "+ listaToreros;
-
 	}
 }
