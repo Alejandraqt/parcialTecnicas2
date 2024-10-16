@@ -34,13 +34,13 @@ public class Ventana {
 	}
 	
 	public static String pedirDato(String dato) {		
-		System.out.println("Por favor ingrese "dato+": ");
+		System.out.println("Por favor ingrese "+dato+": ");
 		String datoRecibido = leer.nextLine();
 		return datoRecibido;
 	}
 	
 	public static int pedirInt(String dato) {		
-		System.out.println("Por favor ingrese "dato+": ");
+		System.out.println("Por favor ingrese "+dato+": ");
 		int datoRecibido = leer.nextInt();
 		return datoRecibido;
 	}

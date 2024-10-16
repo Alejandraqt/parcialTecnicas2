@@ -46,7 +46,7 @@ public class Manager extends Persona{
 		this.telefono = telefono;
 	}
 	
-	public String getListaToreros(int indice) {
+	public Torero getListaToreros(int indice) {
 		return listaToreros.get(indice);
 	}
 
@@ -67,6 +67,6 @@ public class Manager extends Persona{
 				+ "Direccion: "+ direccion
 				+ "Telefono: "+ telefono
 				+ "Lista de toreros apoderados: "+ listaToreros;
-	}
 
+	}
 }
