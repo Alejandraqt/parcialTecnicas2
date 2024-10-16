@@ -42,8 +42,9 @@ public class Ventana {
 	}
 	
 	public static int pedirInt(String dato) {		
-		System.out.println("Por favor ingrese "+dato+": ");
-		int datoRecibido = leer.nextInt();
-		return datoRecibido;
+		System.out.println("Por favor ingrese " + dato + ": ");
+	    String datoString = leer.nextLine();
+	    int datoRecibido = Integer.parseInt(datoString);
+	    return datoRecibido;
 	}
 }

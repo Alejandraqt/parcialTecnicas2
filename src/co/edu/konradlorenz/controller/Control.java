@@ -32,7 +32,7 @@ public class Control {
 					break;
 				case 3:
 					Ventana.mostrarMensaje("- - CORRIDAS POR FERIA - -");
-					//mostrarCoFeria();
+					mostrarCoFeria();
 					break;
 				case 4:
 					Ventana.mostrarMensaje("Esta saliendo, adiós");
@@ -96,7 +96,7 @@ public class Control {
 	}
 
 	public void gestionCorridas() {
-		byte corrida = (byte)((Ventana.pedirInt("Seleccione la corrida que desea ver: "))-1);
+		byte corrida = (byte)((Ventana.pedirInt("la corrida a la que desea acceder "))-1);
 		byte opc = 0;
 		do{
 			opc = Ventana.gestionarCorrida();
@@ -131,9 +131,11 @@ public class Control {
 		cedula = Ventana.pedirDato("la cédula");
 		apodo = Ventana.pedirDato("el apodo");
 		fechaAlter = Ventana.pedirDato("la fecha alternatica (DD/MM/AAAA)");
-		objTorero = new Torero(nombre, cedula, apodo, fechaAlter, null, null, 0, 0, false);
-		listaToreros.add(objTorero);
 		padrino = Ventana.pedirDato("el nombre del padrino");
+		
+		objTorero = new Torero(nombre, cedula, apodo, fechaAlter, objTorero, null, Corrida, Corrida, false);
+		listaToreros.add(objTorero);
+		
 		
 	}
 	
