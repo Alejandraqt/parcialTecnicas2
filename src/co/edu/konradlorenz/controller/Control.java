@@ -32,7 +32,7 @@ public class Control {
 					break;
 				case 3:
 					Ventana.mostrarMensaje("- - CORRIDAS POR FERIA - -");
-					mostrarCoFeria();
+					//mostrarCoFeria();
 					break;
 				case 4:
 					Ventana.mostrarMensaje("Esta saliendo, adiós");
@@ -57,16 +57,15 @@ public class Control {
 	}
 	
 	public Plaza agregarPlaza(String nombre) {
-		boolean encontrado = false;
-		for(int i=0; i<listaPlazas.size(); i++) {
-			if(listaPlazas.get(i).getNombre().equalsIgnoreCase(nombre)){
-				encontrado = true;
-				return listaPlazas.get(i);
-			}
-		}
+
+		for (Plaza plaza : listaPlazas) {
+	        if (plaza.getNombre().equalsIgnoreCase(nombre)) {
+	            return plaza;
+	        }
+	    }
 		
-		if(!encontrado) {
 		Ventana.mostrarMensaje("Agregar nueva plaza: ");
+<<<<<<< HEAD
 		String nombre, localidad, direccion;
 		nombre = nombre;
 		localidad = Ventana.pedirDato("la localidad");
@@ -76,6 +75,16 @@ public class Control {
 		Ventana.mostrarMensaje("Plaza agregada con éxito");
 		return objPlaza;
 		}
+=======
+	    String localidad = Ventana.pedirDato("la localidad");
+	    String direccion = Ventana.pedirDato("la dirección");
+
+	    Plaza nuevaPlaza = new Plaza(nombre, localidad, direccion);
+	    listaPlazas.add(nuevaPlaza);
+
+	    Ventana.mostrarMensaje("Plaza agregada con éxito");
+	    return nuevaPlaza;
+>>>>>>> origin/main
 	}
 
 	public void mostrarCorridas() {
@@ -107,19 +116,19 @@ public class Control {
 			switch(opc) {
 				case 1:
 					Ventana.mostrarMensaje("- - AGREGAR TORERO - -");
-					agregarTorero(corrida);
+					agregarTorero();
 					break;
 				case 2:
 					Ventana.mostrarMensaje("- - VER TOREROS - -");
-					mostrarToreros(corrida);
+					mostrarToreros();
 					break;
 				case 3:
 					Ventana.mostrarMensaje("- - AGREGAR TORO - -");
-					agregarToro(corrida);
+					//agregarToro();
 					break;
 				case 4:
 					Ventana.mostrarMensaje("- - VER TORO - -");
-					mostrarToros(corrida);
+					//mostrarToros(corrida);
 					break;
 				case 5:
 					run();
@@ -142,23 +151,21 @@ public class Control {
 	}
 	
 	public Torero agregarPadrino(String nombre) {
-		boolean encontrado = false;
-		for(int i=0; i<listaToreros.size(); i++) {
-			if(listaToreros.get(i).getNombre().equalsIgnoreCase(nombre)){
-				encontrado = true;
-				return listaToreros.get(i);
+
+		for (Torero torero : listaToreros) {
+			if (torero.getNombre().equalsIgnoreCase(nombre)) {
+				return torero;
 			}
 		}
-			
-		if(!encontrado) {
-			Ventana.mostrarMensaje("Agregar nueva torero: ");
-			String n, c, a, fA, p;
-			n = Ventana.pedirDato("el nombre");
-			c = Ventana.pedirDato("la cédula");
-			a = Ventana.pedirDato("el apodo");
-			fA = Ventana.pedirDato("la fecha alternatica (DD/MM/AAAA)");
-			
-		}
+
+		Ventana.mostrarMensaje("Agregar nuevo torero: ");
+		String cedula = Ventana.pedirDato("la cédula");
+
+		Torero nuevoTorero = new Torero(nombre, cedula);
+		listaToreros.add(nuevoTorero);
+
+		Ventana.mostrarMensaje("Torero agregado con éxito");
+		return nuevoTorero;
 		
 		
 	}

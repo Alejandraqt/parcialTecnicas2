@@ -84,9 +84,7 @@ public class Corrida {
     public void agregarTorero(Torero torero) {
         if (listaToreros.size() < 3) {
             listaToreros.add(torero);
-        } else {
-            String a = "No se pueden agregar más toreros. El límite es 3.";
-        }
+        } 
     }
 
     public void agregarToro(Toro toro) {
